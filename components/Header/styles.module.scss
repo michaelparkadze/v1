@@ -1,0 +1,15 @@
+.container {
+  height: 72px;
+  display: flex;
+  border-bottom: 1px solid #ccc;
+  .logo {
+    flex-grow: 1;
+  }
+  .toggle {
+    width: 72px;
+    display: flex;
+    > button {
+      width: 100%;
+    }
+  }
+}

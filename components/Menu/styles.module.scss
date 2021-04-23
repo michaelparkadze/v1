@@ -1,0 +1,21 @@
+.menu {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+  width: 270px;
+  background-color: #fff;
+  border-left: 1px solid #ccc;
+  transition: all 0.3s ease;
+  z-index: 11;
+}
+
+.darken {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  z-index: 10;
+  transition: background-color 0.3s ease;
+}
