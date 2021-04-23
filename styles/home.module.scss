@@ -1,0 +1,16 @@
+.container {
+  padding: 0 24px;
+  > section {
+    padding: 60px 0;
+    > h1 {
+      font-weight: 600;
+      font-size: 3.25rem;
+      line-height: 1.15;
+      margin-bottom: 24px;
+    }
+    > p {
+      margin-bottom: 40px;
+      line-height: 1.7;
+    }
+  }
+}
