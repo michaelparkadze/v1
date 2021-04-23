@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
 import Menu from "../Menu";
 import styles from "./styles.module.scss";
 
@@ -13,11 +15,12 @@ export default function Header() {
     <>
       <header className={styles.container}>
         <div className={styles.logo}>
-          MP
-          <button onClick={toggleMenu}>M</button>
+          <Link href="/">MP</Link>
         </div>
         <div className={styles.toggle}>
-          <button onClick={toggleMenu}>M</button>
+          <button onClick={toggleMenu}>
+            <Image src="/assets/icons/menu.svg" height={28} width={28} />
+          </button>
         </div>
       </header>
       <Menu open={open} toggleMenu={toggleMenu} />
