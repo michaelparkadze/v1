@@ -8,6 +8,23 @@
   border-left: 1px solid #ccc;
   transition: all 0.3s ease;
   z-index: 11;
+  > div {
+    position: absolute !important;
+    right: 16px;
+    top: 16px;
+  }
+  > nav {
+    padding: 80px 24px;
+    > ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      > li {
+        margin: 14px 0;
+      }
+    }
+  }
 }
 
 .darken {
