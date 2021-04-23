@@ -1,6 +1,6 @@
 .container {
   padding: 0 24px;
-  > section {
+  .welcome {
     padding: 60px 0;
     > h1 {
       font-weight: 600;
@@ -12,5 +12,89 @@
       margin-bottom: 40px;
       line-height: 1.7;
     }
+    > button {
+      margin-bottom: 40px;
+    }
+    .illustration {
+      position: relative;
+      height: 300px;
+      .background {
+        position: absolute;
+        height: 300px;
+        width: 100%;
+        background-image: url("../public/assets/images/person-background.svg");
+        background-size: cover;
+        animation: floating 3s ease-in-out infinite;
+      }
+      .person {
+        position: absolute;
+        height: 300px;
+        width: 100%;
+        background-image: url("../public/assets/images/michael.svg");
+        background-size: cover;
+        animation: floating 4s ease-in-out infinite;
+      }
+      .note1 {
+        position: absolute;
+        height: 300px;
+        width: 100%;
+        background-image: url("../public/assets/images/note1.svg");
+        background-size: cover;
+        animation: floatingReverse 2.25s ease-in-out infinite;
+      }
+      .note2 {
+        position: absolute;
+        height: 300px;
+        width: 100%;
+        background-image: url("../public/assets/images/note2.svg");
+        background-size: cover;
+        animation: floating 5s ease-in-out infinite;
+      }
+    }
+  }
+  .about {
+    padding: 60px 0;
+    > h2 {
+      font-weight: 600;
+      font-size: 2rem;
+      line-height: 1.15;
+      margin-bottom: 24px;
+    }
+    > p {
+      margin-bottom: 24px;
+      line-height: 1.7;
+    }
+    > button {
+      margin-top: 16px;
+    }
+  }
+  > hr {
+    border: none;
+    border-bottom: 1px solid #ccc;
+    border-color: rgb(214, 214, 214);
+  }
+}
+
+@keyframes floating {
+  0% {
+    transform: translate(0, 0px);
+  }
+  50% {
+    transform: translate(0, 16px);
+  }
+  100% {
+    transform: translate(0, -0px);
+  }
+}
+
+@keyframes floatingReverse {
+  0% {
+    transform: translate(0, 0px);
+  }
+  50% {
+    transform: translate(0, -8px);
+  }
+  100% {
+    transform: translate(0, -0px);
   }
 }
