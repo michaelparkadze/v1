@@ -5,10 +5,16 @@ import { format, parseISO } from "date-fns";
 import styles from "./styles.module.scss";
 
 export default function ArticleCard(props) {
-  const { title, description, topic, date, slug, readTime } = props;
+  const { title, description, topic, date, slug, readTime, last } = props;
   return (
     <Link href={slug}>
-      <div className={styles.card}>
+      <div
+        className={styles.card}
+        style={{
+          borderBottom: last ? "none" : "auto",
+          paddingBottom: last ? "0" : "auto",
+        }}
+      >
         <div className={styles.title}>{title}</div>
         <div className={styles.description}>{description}</div>
         <div className={styles.extra}>

@@ -108,6 +108,19 @@
       column-gap: 24px;
     }
   }
+  .contact {
+    padding: 60px 0;
+    > h2 {
+      font-weight: 600;
+      font-size: 2rem;
+      line-height: 1.15;
+      margin-bottom: 24px;
+    }
+    > p {
+      margin-bottom: 40px;
+      line-height: 1.7;
+    }
+  }
   > hr {
     border: none;
     border-bottom: 1px solid #ccc;

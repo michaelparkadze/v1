@@ -84,6 +84,7 @@ export default function Home(props) {
                 return (
                   <ArticleCard
                     key={index}
+                    last={index === posts.length - 1}
                     title={item.title}
                     description={item.description}
                     topic={item.topic}
@@ -94,6 +95,23 @@ export default function Home(props) {
                 );
               })}
             </ul>
+          </section>
+          <hr />
+          <section className={styles.contact}>
+            <a className={styles.anchor} id="contact"></a>
+            <h2>Contact me</h2>
+            <p>
+              Although I'm not currently looking for any new opportunities, my
+              inbox is always open. Whether you have a question or just want to
+              say hi, I'll try my best to get back to you!
+            </p>
+            <a
+              href="mailto:michaelparkadze@icloud.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button>Say hello</Button>
+            </a>
           </section>
         </div>
       </Layout>
