@@ -3,51 +3,14 @@ import Image from "next/image";
 import Layout from "../components/Layout";
 import Button from "../components/Button";
 import ProjectCard from "../components/ProjectCard";
+import ArticleCard from "../components/ArticleCard";
+import { getAllPosts } from "../lib/data";
+import readTime from "../lib/readTime";
+import projects from "../content/projects";
 import styles from "../styles/home.module.scss";
 
-export default function Home() {
-  const projects = [
-    {
-      name: "Whutsapp",
-      description: `This is a messaging web application based on popular apps like WhatsApp and Telegram, Built with React, Typescript, Firebase, and Sass`,
-      type: "WEB MESSENGER",
-      iconBg: "#fff",
-      gradient1: "#090979",
-      gradient2: "#00d4ff",
-      liveLink: "https://react-typescript-chat-ap-d6740.web.app/",
-      codeLink: "https://github.com/michaelparkadze/react-typescript-chat-app",
-    },
-    {
-      name: "Eccom",
-      description: `This is an e-commerce web application based on other popular e-commerce platforms. Built with Angular, Node.js, and MySQL`,
-      type: "E-COMMERCE",
-      iconBg: "#fff",
-      gradient1: "#ff9a9e",
-      gradient2: "#ba77ff",
-      liveLink: "",
-      codeLink: "https://github.com/michaelparkadze/angular-ecommerce-app",
-    },
-    {
-      name: "Trullo",
-      description: `This is a kanban type application based on Trello, built with React and Firebase.`,
-      type: "KANBAN ORGANIZER",
-      iconBg: "#fff",
-      gradient1: "#00ffbd",
-      gradient2: "#c100ff",
-      liveLink: "https://react-trello-clone-42c7f.web.app/",
-      codeLink: "https://github.com/michaelparkadze/react-trello-clone",
-    },
-    {
-      name: "Michael Parkadze",
-      description: `This is the first iteration of my personal website built with Next.js and Sass`,
-      type: "PERSONAL WEBSITE",
-      iconBg: "#fff",
-      gradient1: "#dcdcdc",
-      gradient2: "#484848",
-      liveLink: "",
-      codeLink: "https://github.com/michaelparkadze/v1",
-    },
-  ];
+export default function Home(props) {
+  const { posts } = props;
   return (
     <>
       <Head>
@@ -110,8 +73,41 @@ export default function Home() {
               })}
             </ul>
           </section>
+          <hr />
+          <section className={styles.article}>
+            <h2>Articles</h2>
+            <ul>
+              {posts.map((item, index) => {
+                return (
+                  <ArticleCard
+                    key={index}
+                    title={item.title}
+                    description={item.description}
+                    topic={item.topic}
+                    date={item.date}
+                    slug={item.slug}
+                    readTime={readTime(item.content)}
+                  />
+                );
+              })}
+            </ul>
+          </section>
         </div>
       </Layout>
     </>
   );
+}
+
+export async function getStaticProps() {
+  const allPosts = getAllPosts();
+  return {
+    props: {
+      posts: allPosts.map(({ data, content, slug }) => ({
+        ...data,
+        date: data.date.toISOString(),
+        content,
+        slug,
+      })),
+    },
+  };
 }
