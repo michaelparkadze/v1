@@ -20,14 +20,16 @@ export default function Home(props) {
         <div className={styles.container}>
           <section className={styles.welcome}>
             <a className={styles.anchor} id="welcome"></a>
-            <h1>
-              Hello I am Michael. <br /> A software engineer.
-            </h1>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit dapibus
-              porta lorem morbi hendrerit. Maecenas et, at quis purus.
-            </p>
-            <Button>Contact me</Button>
+            <div className={styles.left}>
+              <h1>
+                Hello I am Michael. <br /> A software engineer.
+              </h1>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit dapibus
+                porta lorem morbi hendrerit. Maecenas et, at quis purus.
+              </p>
+              <Button>Contact me</Button>
+            </div>
             <div className={styles.illustration}>
               <div className={styles.background}></div>
               <div className={styles.person}></div>

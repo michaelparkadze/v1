@@ -2,19 +2,20 @@
   padding: 60px 24px 0;
   .welcome {
     padding: 60px 0;
-
-    > h1 {
-      font-weight: 600;
-      font-size: 3.25rem;
-      line-height: 1.15;
-      margin-bottom: 24px;
-    }
-    > p {
-      margin-bottom: 40px;
-      line-height: 1.7;
-    }
-    > button {
-      margin-bottom: 40px;
+    .left {
+      > h1 {
+        font-weight: 600;
+        font-size: 3.25rem;
+        line-height: 1.15;
+        margin-bottom: 24px;
+      }
+      > p {
+        margin-bottom: 40px;
+        line-height: 1.7;
+      }
+      > button {
+        margin-bottom: 40px;
+      }
     }
     .illustration {
       position: relative;
@@ -125,6 +126,33 @@
     border: none;
     border-bottom: 1px solid #ccc;
     border-color: rgb(214, 214, 214);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    .welcome {
+      padding: 90px 0;
+      display: flex;
+      align-items: center;
+      .left {
+        > h1 {
+          font-size: 2.5rem;
+        }
+      }
+      .illustration {
+        height: 350px;
+        min-width: 330px;
+      }
+    }
+    .about {
+    }
+    .projects {
+    }
+    .articles {
+    }
+    .contact {
+    }
   }
 }
 
