@@ -96,14 +96,17 @@
       margin-top: 16px;
     }
   }
-  .article {
+  .articles {
     padding: 60px 0;
-    > h2 {
-      font-weight: 600;
-      font-size: 2rem;
-      line-height: 1.15;
-      margin-bottom: 40px;
+    > div {
+      > h2 {
+        font-weight: 600;
+        font-size: 2rem;
+        line-height: 1.15;
+        margin-bottom: 40px;
+      }
     }
+
     > ul {
       padding: 0;
       display: grid;
@@ -167,6 +170,24 @@
       }
     }
     .articles {
+      padding: 90px 0;
+      display: flex;
+      > div {
+        > h2 {
+          position: sticky;
+          top: 110px;
+          margin-right: 32px;
+          margin-bottom: 0px;
+          font-weight: 600;
+          font-size: 2rem;
+          line-height: 1.15;
+          margin-bottom: 40px;
+        }
+      }
+      > ul {
+        margin: 0;
+        // grid-template-columns: 1fr 1fr;
+      }
     }
     .contact {
     }

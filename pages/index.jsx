@@ -81,9 +81,11 @@ export default function Home(props) {
             </ul>
           </section>
           <hr />
-          <section className={styles.article}>
+          <section className={styles.articles}>
             <a className={styles.anchor} id="articles"></a>
-            <h2>Articles</h2>
+            <div>
+              <h2>Articles</h2>
+            </div>
             <ul>
               {posts.map((item, index) => {
                 return (
