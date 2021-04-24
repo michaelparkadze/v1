@@ -2,6 +2,7 @@
   padding: 60px 24px 0;
   .welcome {
     padding: 60px 0;
+
     > h1 {
       font-weight: 600;
       font-size: 3.25rem;
@@ -112,6 +113,13 @@
     border-bottom: 1px solid #ccc;
     border-color: rgb(214, 214, 214);
   }
+}
+
+a.anchor {
+  display: block;
+  position: relative;
+  top: -100px;
+  visibility: hidden;
 }
 
 @keyframes floating {

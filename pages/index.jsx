@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Image from "next/image";
 import Layout from "../components/Layout";
 import Button from "../components/Button";
 import ProjectCard from "../components/ProjectCard";
@@ -20,6 +19,7 @@ export default function Home(props) {
       <Layout>
         <div className={styles.container}>
           <section className={styles.welcome}>
+            <a className={styles.anchor} id="welcome"></a>
             <h1>
               Hello I am Michael. <br /> A software engineer.
             </h1>
@@ -37,6 +37,7 @@ export default function Home(props) {
           </section>
           <hr />
           <section className={styles.about}>
+            <a className={styles.anchor} id="about"></a>
             <h2>About me</h2>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque
@@ -54,6 +55,7 @@ export default function Home(props) {
           </section>
           <hr />
           <section className={styles.projects}>
+            <a className={styles.anchor} id="projects"></a>
             <h2>Projects</h2>
             <ul>
               {projects.map((item, index) => {
@@ -75,6 +77,7 @@ export default function Home(props) {
           </section>
           <hr />
           <section className={styles.article}>
+            <a className={styles.anchor} id="articles"></a>
             <h2>Articles</h2>
             <ul>
               {posts.map((item, index) => {
