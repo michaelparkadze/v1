@@ -186,10 +186,13 @@
       }
       > ul {
         margin: 0;
-        // grid-template-columns: 1fr 1fr;
       }
     }
     .contact {
+      text-align: center;
+      > p {
+        padding: 0 80px;
+      }
     }
   }
 }
