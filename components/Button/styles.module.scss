@@ -1,6 +1,15 @@
 .button {
-  height: 48px;
-  padding: 0 32px;
   background-color: transparent;
-  border: 2px solid #111;
+  border: 2px solid #121212;
+  height: 48px;
+  padding: 0 30px;
+  transition: all 0.3s;
+  cursor: pointer;
+  background: linear-gradient(to bottom, transparent 50%, #111 50%);
+  background-size: 100% 200%;
+  background-position: left top;
+  &:hover {
+    color: #fff;
+    background-position: right bottom;
+  }
 }
