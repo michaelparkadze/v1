@@ -54,10 +54,8 @@ export default function Menu(props) {
           <ul>
             {links.map((item, index) => {
               return (
-                <li onClick={toggleMenu}>
-                  <Link key={index} href={item.link}>
-                    {item.name}
-                  </Link>
+                <li onClick={toggleMenu} key={index}>
+                  <Link href={item.link}>{item.name}</Link>
                 </li>
               );
             })}
