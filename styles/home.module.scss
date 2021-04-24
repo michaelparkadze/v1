@@ -68,6 +68,29 @@
       margin-top: 16px;
     }
   }
+  .projects {
+    padding: 60px 0;
+    > h2 {
+      font-weight: 600;
+      font-size: 2rem;
+      line-height: 1.15;
+      margin-bottom: 24px;
+    }
+    > p {
+      margin-bottom: 24px;
+      line-height: 1.7;
+    }
+    > ul {
+      padding: 0;
+      display: grid;
+      grid-template-columns: 1fr;
+      row-gap: 24px;
+      column-gap: 24px;
+    }
+    > button {
+      margin-top: 16px;
+    }
+  }
   > hr {
     border: none;
     border-bottom: 1px solid #ccc;
