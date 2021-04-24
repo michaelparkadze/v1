@@ -22,7 +22,7 @@
       height: 300px;
       .background {
         position: absolute;
-        height: 300px;
+        height: 100%;
         width: 100%;
         background-image: url("../public/assets/images/person-background.svg");
         background-size: cover;
@@ -30,7 +30,7 @@
       }
       .person {
         position: absolute;
-        height: 300px;
+        height: 100%;
         width: 100%;
         background-image: url("../public/assets/images/michael.svg");
         background-size: cover;
@@ -38,7 +38,7 @@
       }
       .note1 {
         position: absolute;
-        height: 300px;
+        height: 100%;
         width: 100%;
         background-image: url("../public/assets/images/note1.svg");
         background-size: cover;
@@ -46,7 +46,7 @@
       }
       .note2 {
         position: absolute;
-        height: 300px;
+        height: 100%;
         width: 100%;
         background-image: url("../public/assets/images/note2.svg");
         background-size: cover;
@@ -189,10 +189,56 @@
       }
     }
     .contact {
+      padding: 90px 0;
       text-align: center;
       > p {
         padding: 0 80px;
       }
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    max-width: 1024px;
+    margin: 0 auto;
+    .welcome {
+      padding: 100px 0;
+      .left {
+        > h1 {
+          font-size: 2.75rem;
+        }
+      }
+      .illustration {
+        height: 450px;
+        min-width: 450px;
+      }
+    }
+    .about {
+      padding: 100px 0;
+      > div {
+        > p {
+          margin-bottom: 24px;
+          line-height: 1.9;
+        }
+      }
+    }
+    .projects {
+      padding: 100px 0;
+      > ul {
+        row-gap: 36px;
+        column-gap: 36px;
+      }
+    }
+    .articles {
+      padding: 100px 0;
+      > ul {
+        row-gap: 60px;
+        column-gap: 24px;
+      }
+    }
+    .contact {
+      padding: 100px 0;
     }
   }
 }
