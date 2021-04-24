@@ -74,7 +74,7 @@
       font-weight: 600;
       font-size: 2rem;
       line-height: 1.15;
-      margin-bottom: 24px;
+      margin-bottom: 40px;
     }
     > p {
       margin-bottom: 24px;
@@ -89,6 +89,22 @@
     }
     > button {
       margin-top: 16px;
+    }
+  }
+  .article {
+    padding: 60px 0;
+    > h2 {
+      font-weight: 600;
+      font-size: 2rem;
+      line-height: 1.15;
+      margin-bottom: 40px;
+    }
+    > ul {
+      padding: 0;
+      display: grid;
+      grid-template-columns: 1fr;
+      row-gap: 40px;
+      column-gap: 24px;
     }
   }
   > hr {

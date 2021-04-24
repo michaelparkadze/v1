@@ -1,5 +1,7 @@
 ---
 title: My second post!
+description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et tortor velit morbi integer sed orci, suspendisse quis. Turpis quis id eget feugiat.
+topic: Design
 date: 2021-02-14T19:05:27.220Z
 ---
 

@@ -1,3 +1,17 @@
 <svg width="750" height="750" viewBox="0 0 750 750" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M637.764 563.088C752.613 460.616 604.334 402.145 631.662 315.549C658.99 228.953 728.161 98.7229 470.07 121.667C211.978 144.611 -2.29138 405.282 89.7193 527.964C181.73 650.645 522.915 665.561 637.764 563.088Z" fill="#121212"/>
+  <defs>
+    <linearGradient id="linear" x1="0%" y1="0%" x2="100%" y2="0%" >
+    <!-- <stop offset="0%" stop-color="#0A0068" stop-opacity=".5">
+      <animate attributeName="stop-color" values="lightblue;blue;red;red;black;red;red;purple;lightblue" dur="14s" repeatCount="indefinite" />
+    </stop>
+        <stop offset="100%" stop-color="#7A00B2" stop-opacity=".5">
+      <animate attributeName="stop-color" values="lightblue;#7A00B2;red;#7A00B2" dur="14s" repeatCount="indefinite" />
+    </stop> -->
+      <stop offset="0%"   stop-color="#121212"/>
+      <stop offset="100%" stop-color="#121212"/>
+
+      
+    </linearGradient>
+  </defs>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M637.764 563.088C752.613 460.616 604.334 402.145 631.662 315.549C658.99 228.953 728.161 98.7229 470.07 121.667C211.978 144.611 -2.29138 405.282 89.7193 527.964C181.73 650.645 522.915 665.561 637.764 563.088Z" fill="url(#linear)"/>
 </svg>
