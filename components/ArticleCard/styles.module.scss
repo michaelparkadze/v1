@@ -1,0 +1,44 @@
+.card {
+  cursor: pointer;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #ccc;
+  .title {
+    font-size: 1.375rem;
+    font-weight: 600;
+    line-height: 1.35;
+    margin-bottom: 12px;
+  }
+  .description {
+    margin-bottom: 24px;
+    line-height: 1.7;
+  }
+  .extra {
+    display: flex;
+    .date {
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+      .divider {
+        width: 10px;
+        height: 1px;
+        margin-right: 10px;
+        margin-left: 10px;
+        background-color: #ccc;
+      }
+      > span {
+        font-weight: 500;
+        font-size: 0.875rem;
+      }
+    }
+    .readtime {
+      font-weight: 500;
+      font-size: 0.875rem;
+      color: #575757;
+      display: flex;
+      align-items: center;
+      > span {
+        margin-left: 6px;
+      }
+    }
+  }
+}
