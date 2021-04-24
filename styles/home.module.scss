@@ -62,10 +62,13 @@
       line-height: 1.15;
       margin-bottom: 24px;
     }
-    > p {
-      margin-bottom: 24px;
-      line-height: 1.7;
+    > div {
+      > p {
+        margin-bottom: 24px;
+        line-height: 1.7;
+      }
     }
+
     > button {
       margin-top: 16px;
     }
@@ -146,6 +149,16 @@
       }
     }
     .about {
+      padding: 90px 0;
+      > div {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 24px;
+        > p {
+          margin-bottom: 24px;
+          line-height: 1.7;
+        }
+      }
     }
     .projects {
     }

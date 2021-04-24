@@ -41,18 +41,21 @@ export default function Home(props) {
           <section className={styles.about}>
             <a className={styles.anchor} id="about"></a>
             <h2>About me</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque
-              tempor, malesuada adipiscing congue diam. Quis orci amet porttitor
-              blandit amet nullam sit. Elit, purus blandit non ut non quam
-              curabitur.
-            </p>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque
-              tempor, malesuada adipiscing congue diam. Quis orci amet porttitor
-              blandit amet nullam sit. Elit, purus blandit non ut non quam
-              curabitur.
-            </p>
+            <div>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque
+                tempor, malesuada adipiscing congue diam. Quis orci amet
+                porttitor blandit amet nullam sit. Elit, purus blandit non ut
+                non quam curabitur.
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque
+                tempor, malesuada adipiscing congue diam. Quis orci amet
+                porttitor blandit amet nullam sit. Elit, purus blandit non ut
+                non quam curabitur.
+              </p>
+            </div>
+
             <Button>More about me</Button>
           </section>
           <hr />
