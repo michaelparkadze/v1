@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Link from "next/link";
 import Image from "next/image";
 import useWindowDimensions from "../../hooks/useWindowDimensions";
 import Menu from "../Menu";
@@ -18,7 +17,7 @@ export default function Header() {
     <>
       <header className={styles.container}>
         <div className={styles.logo}>
-          <Link href="/">MP</Link>
+          <a href="/">MP</a>
         </div>
         {isMobile ? (
           <div className={styles.toggle}>
@@ -29,21 +28,21 @@ export default function Header() {
         ) : (
           <nav className={styles.nav}>
             <ul>
-              <Link href="#welcome">
+              <a href="#welcome">
                 <li>Home</li>
-              </Link>
-              <Link href="#about">
+              </a>
+              <a href="#about">
                 <li>About</li>
-              </Link>
-              <Link href="#projects">
+              </a>
+              <a href="#projects">
                 <li>Projects</li>
-              </Link>
-              <Link href="#articles">
+              </a>
+              <a href="#articles">
                 <li>Articles</li>
-              </Link>
-              <Link href="#contact">
+              </a>
+              <a href="#contact">
                 <li>Contact</li>
-              </Link>
+              </a>
             </ul>
           </nav>
         )}
