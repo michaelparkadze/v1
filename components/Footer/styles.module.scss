@@ -1,0 +1,32 @@
+.footer {
+  padding: 40px 16px;
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+  font-size: 0.875rem;
+  text-align: center;
+  .logo {
+    margin-bottom: 24px;
+    > a {
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 600;
+      font-size: 2rem;
+    }
+  }
+  .links {
+    margin-bottom: 24px;
+    > a {
+      > svg {
+        fill: #535353;
+        margin: 0 8px !important;
+        cursor: pointer;
+        transition: fill 0.2s;
+        &:hover {
+          fill: #121212;
+        }
+      }
+    }
+  }
+  .copyright {
+    color: #767676;
+  }
+}
