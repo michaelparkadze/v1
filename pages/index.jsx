@@ -18,6 +18,7 @@ export default function Home(props) {
   const welcomeAnimation = useAnimation();
   const aboutAnimation = useAnimation();
   const projectsAnimation = useAnimation();
+  const articlesAnimation = useAnimation();
   const [welcomeRef, welcomeInView] = useInView({
     triggerOnce: true,
     rootMargin: isMobile ? "-50px" : "-100px",
@@ -30,10 +31,10 @@ export default function Home(props) {
     triggerOnce: true,
     rootMargin: isMobile ? "-100px" : "-300px",
   });
-  // const [articles, inView] = useInView({
-  //   triggerOnce: true,
-  //   rootMargin: "0px",
-  // });
+  const [articlesRef, articlesInView] = useInView({
+    triggerOnce: true,
+    rootMargin: "-100px",
+  });
   // const [aboutRef, inView] = useInView({
   //   triggerOnce: true,
   //   rootMargin: "0px",
@@ -63,13 +64,13 @@ export default function Home(props) {
     }
   }, [projectsAnimation, projectsInView]);
 
-  // About InView
-  // useEffect(() => {
-  //   if (inView) {
-  //     animation.start("visible");
-  //     console.log("about is visible");
-  //   }
-  // }, [animation, inView]);
+  // Articles InView
+  useEffect(() => {
+    if (articlesInView) {
+      articlesAnimation.start("visible");
+      console.log("articles is visible");
+    }
+  }, [articlesAnimation, articlesInView]);
 
   // About InView
   // useEffect(() => {
@@ -259,10 +260,29 @@ export default function Home(props) {
           <hr />
           <section className={styles.articles}>
             <a className={styles.anchor} id="articles"></a>
-            <div>
+            <motion.div
+              ref={articlesRef}
+              animate={articlesAnimation}
+              initial="hidden"
+              variants={variants}
+              transition={{
+                duration: 0.8,
+                ease: [0.6, 0.05, -0.01, 0.9],
+                delay: 0,
+              }}
+            >
               <h2>Articles</h2>
-            </div>
-            <ul>
+            </motion.div>
+            <motion.ul
+              animate={articlesAnimation}
+              initial="hidden"
+              variants={variants}
+              transition={{
+                duration: 0.8,
+                ease: [0.6, 0.05, -0.01, 0.9],
+                delay: 0.15,
+              }}
+            >
               {posts.map((item, index) => {
                 return (
                   <ArticleCard
@@ -277,7 +297,7 @@ export default function Home(props) {
                   />
                 );
               })}
-            </ul>
+            </motion.ul>
           </section>
           <hr />
           <section className={styles.contact}>
