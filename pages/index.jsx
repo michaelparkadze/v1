@@ -15,9 +15,9 @@ export default function Home(props) {
   const animation = useAnimation();
   const [aboutRef, aboutInView] = useInView({
     triggerOnce: true,
-    rootMargin: "0px",
+    rootMargin: "-75px",
   });
-  // const [projects, inView] = useInView({
+  // const [projectsRef, projectsInView] = useInView({
   //   triggerOnce: true,
   //   rootMargin: "0px",
   // });
@@ -139,23 +139,63 @@ export default function Home(props) {
           <hr />
           <section className={styles.about}>
             <a className={styles.anchor} id="about"></a>
-            <h2>About me</h2>
+            <motion.h2
+              ref={aboutRef}
+              animate={animation}
+              initial="hidden"
+              variants={variants}
+              transition={{
+                duration: 0.8,
+                ease: [0.6, 0.05, -0.01, 0.9],
+                delay: 0,
+              }}
+            >
+              About me
+            </motion.h2>
             <div>
-              <p>
+              <motion.p
+                animate={animation}
+                initial="hidden"
+                variants={variants}
+                transition={{
+                  duration: 0.8,
+                  ease: [0.6, 0.05, -0.01, 0.9],
+                  delay: 0.15,
+                }}
+              >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque
                 tempor, malesuada adipiscing congue diam. Quis orci amet
                 porttitor blandit amet nullam sit. Elit, purus blandit non ut
                 non quam curabitur.
-              </p>
-              <p>
+              </motion.p>
+              <motion.p
+                animate={animation}
+                initial="hidden"
+                variants={variants}
+                transition={{
+                  duration: 0.8,
+                  ease: [0.6, 0.05, -0.01, 0.9],
+                  delay: 0.3,
+                }}
+              >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque
                 tempor, malesuada adipiscing congue diam. Quis orci amet
                 porttitor blandit amet nullam sit. Elit, purus blandit non ut
                 non quam curabitur.
-              </p>
+              </motion.p>
             </div>
-
-            <Button>More about me</Button>
+            <motion.div
+              animate={animation}
+              initial="hidden"
+              variants={variants}
+              transition={{
+                duration: 0.8,
+                ease: [0.6, 0.05, -0.01, 0.9],
+                delay: 0.35,
+              }}
+            >
+              <Button>More about me</Button>
+            </motion.div>
           </section>
           <hr />
           <section className={styles.projects}>
