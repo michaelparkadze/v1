@@ -19,6 +19,8 @@ export default function Home(props) {
   const aboutAnimation = useAnimation();
   const projectsAnimation = useAnimation();
   const articlesAnimation = useAnimation();
+  const contactAnimation = useAnimation();
+
   const [welcomeRef, welcomeInView] = useInView({
     triggerOnce: true,
     rootMargin: isMobile ? "-50px" : "-100px",
@@ -35,10 +37,10 @@ export default function Home(props) {
     triggerOnce: true,
     rootMargin: "-100px",
   });
-  // const [aboutRef, inView] = useInView({
-  //   triggerOnce: true,
-  //   rootMargin: "0px",
-  // });
+  const [contactRef, contactInView] = useInView({
+    triggerOnce: true,
+    rootMargin: "-100px",
+  });
 
   // Welcome InView
   useEffect(() => {
@@ -72,13 +74,13 @@ export default function Home(props) {
     }
   }, [articlesAnimation, articlesInView]);
 
-  // About InView
-  // useEffect(() => {
-  //   if (inView) {
-  //     animation.start("visible");
-  //     console.log("about is visible");
-  //   }
-  // }, [animation, inView]);
+  // Contact InView
+  useEffect(() => {
+    if (contactInView) {
+      contactAnimation.start("visible");
+      console.log("contact is visible");
+    }
+  }, [contactAnimation, contactInView]);
 
   const variants = {
     visible: {
@@ -302,19 +304,51 @@ export default function Home(props) {
           <hr />
           <section className={styles.contact}>
             <a className={styles.anchor} id="contact"></a>
-            <h2>Contact me</h2>
-            <p>
+            <motion.h2
+              ref={contactRef}
+              animate={contactAnimation}
+              initial="hidden"
+              variants={variants}
+              transition={{
+                duration: 0.8,
+                ease: [0.6, 0.05, -0.01, 0.9],
+                delay: 0,
+              }}
+            >
+              Contact me
+            </motion.h2>
+            <motion.p
+              animate={contactAnimation}
+              initial="hidden"
+              variants={variants}
+              transition={{
+                duration: 0.8,
+                ease: [0.6, 0.05, -0.01, 0.9],
+                delay: 0.15,
+              }}
+            >
               Although I'm not currently looking for any new opportunities, my
               inbox is always open. Whether you have a question or just want to
               say hi, I'll try my best to get back to you!
-            </p>
-            <a
-              href="mailto:michaelparkadze@icloud.com"
-              target="_blank"
-              rel="noopener noreferrer"
+            </motion.p>
+            <motion.div
+              animate={contactAnimation}
+              initial="hidden"
+              variants={variants}
+              transition={{
+                duration: 0.8,
+                ease: [0.6, 0.05, -0.01, 0.9],
+                delay: 0.3,
+              }}
             >
-              <Button>Say hello</Button>
-            </a>
+              <a
+                href="mailto:michaelparkadze@icloud.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button>Say hello</Button>
+              </a>
+            </motion.div>
           </section>
         </div>
       </Layout>
