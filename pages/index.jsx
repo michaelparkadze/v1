@@ -10,17 +10,21 @@ import { motion, useAnimation } from "framer-motion";
 import styles from "../styles/home.module.scss";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
+import useWindowDimensions from "../hooks/useWindowDimensions";
 
 export default function Home(props) {
-  const animation = useAnimation();
+  const { width } = useWindowDimensions();
+  const isMobile = width <= 768;
+  const aboutAnimation = useAnimation();
+  const projectsAnimation = useAnimation();
   const [aboutRef, aboutInView] = useInView({
     triggerOnce: true,
-    rootMargin: "-75px",
+    rootMargin: isMobile ? "-75px" : "-100px",
   });
-  // const [projectsRef, projectsInView] = useInView({
-  //   triggerOnce: true,
-  //   rootMargin: "0px",
-  // });
+  const [projectsRef, projectsInView] = useInView({
+    triggerOnce: true,
+    rootMargin: isMobile ? "-100px" : "-300px",
+  });
   // const [articles, inView] = useInView({
   //   triggerOnce: true,
   //   rootMargin: "0px",
@@ -33,18 +37,18 @@ export default function Home(props) {
   // About InView
   useEffect(() => {
     if (aboutInView) {
-      animation.start("visible");
+      aboutAnimation.start("visible");
       console.log("about is visible");
     }
-  }, [animation, aboutInView]);
+  }, [aboutAnimation, aboutInView]);
 
-  // About InView
-  // useEffect(() => {
-  //   if (inView) {
-  //     animation.start("visible");
-  //     console.log("about is visible");
-  //   }
-  // }, [animation, inView]);
+  // Projects InView
+  useEffect(() => {
+    if (projectsInView) {
+      projectsAnimation.start("visible");
+      console.log("projects is visible");
+    }
+  }, [projectsAnimation, projectsInView]);
 
   // About InView
   // useEffect(() => {
@@ -141,7 +145,7 @@ export default function Home(props) {
             <a className={styles.anchor} id="about"></a>
             <motion.h2
               ref={aboutRef}
-              animate={animation}
+              animate={aboutAnimation}
               initial="hidden"
               variants={variants}
               transition={{
@@ -154,7 +158,7 @@ export default function Home(props) {
             </motion.h2>
             <div>
               <motion.p
-                animate={animation}
+                animate={aboutAnimation}
                 initial="hidden"
                 variants={variants}
                 transition={{
@@ -169,7 +173,7 @@ export default function Home(props) {
                 non quam curabitur.
               </motion.p>
               <motion.p
-                animate={animation}
+                animate={aboutAnimation}
                 initial="hidden"
                 variants={variants}
                 transition={{
@@ -185,7 +189,7 @@ export default function Home(props) {
               </motion.p>
             </div>
             <motion.div
-              animate={animation}
+              animate={aboutAnimation}
               initial="hidden"
               variants={variants}
               transition={{
@@ -198,10 +202,30 @@ export default function Home(props) {
             </motion.div>
           </section>
           <hr />
-          <section className={styles.projects}>
+          <section className={styles.projects} ref={projectsRef}>
             <a className={styles.anchor} id="projects"></a>
-            <h2>Projects</h2>
-            <ul>
+            <motion.h2
+              animate={projectsAnimation}
+              initial="hidden"
+              variants={variants}
+              transition={{
+                duration: 0.8,
+                ease: [0.6, 0.05, -0.01, 0.9],
+                delay: 0,
+              }}
+            >
+              Projects
+            </motion.h2>
+            <motion.ul
+              animate={projectsAnimation}
+              initial="hidden"
+              variants={variants}
+              transition={{
+                duration: 0.8,
+                ease: [0.6, 0.05, -0.01, 0.9],
+                delay: 0.15,
+              }}
+            >
               {projects.map((item, index) => {
                 return (
                   <ProjectCard
@@ -217,7 +241,7 @@ export default function Home(props) {
                   />
                 );
               })}
-            </ul>
+            </motion.ul>
           </section>
           <hr />
           <section className={styles.articles}>
