@@ -15,8 +15,13 @@ import useWindowDimensions from "../hooks/useWindowDimensions";
 export default function Home(props) {
   const { width } = useWindowDimensions();
   const isMobile = width <= 768;
+  const welcomeAnimation = useAnimation();
   const aboutAnimation = useAnimation();
   const projectsAnimation = useAnimation();
+  const [welcomeRef, welcomeInView] = useInView({
+    triggerOnce: true,
+    rootMargin: isMobile ? "-50px" : "-100px",
+  });
   const [aboutRef, aboutInView] = useInView({
     triggerOnce: true,
     rootMargin: isMobile ? "-75px" : "-100px",
@@ -33,6 +38,14 @@ export default function Home(props) {
   //   triggerOnce: true,
   //   rootMargin: "0px",
   // });
+
+  // Welcome InView
+  useEffect(() => {
+    if (welcomeInView) {
+      welcomeAnimation.start("visible");
+      console.log("welcome is visible");
+    }
+  }, [welcomeAnimation, welcomeInView]);
 
   // About InView
   useEffect(() => {
@@ -83,10 +96,10 @@ export default function Home(props) {
       </Head>
       <Layout>
         <div className={styles.container} id="welcome">
-          <section className={styles.welcome}>
+          <section className={styles.welcome} ref={welcomeRef}>
             <div className={styles.left}>
               <motion.h1
-                animate="visible"
+                animate={welcomeAnimation}
                 initial="hidden"
                 variants={variants}
                 transition={{
@@ -98,7 +111,7 @@ export default function Home(props) {
                 Hello I am Michael. <br /> A software engineer.
               </motion.h1>
               <motion.p
-                animate="visible"
+                animate={welcomeAnimation}
                 initial="hidden"
                 variants={variants}
                 transition={{
@@ -111,7 +124,7 @@ export default function Home(props) {
                 porta lorem morbi hendrerit. Maecenas et, at quis purus.
               </motion.p>
               <motion.div
-                animate="visible"
+                animate={welcomeAnimation}
                 initial="hidden"
                 variants={variants}
                 transition={{
@@ -125,7 +138,7 @@ export default function Home(props) {
             </div>
             <motion.div
               className={styles.illustration}
-              animate="visible"
+              animate={welcomeAnimation}
               initial="hidden"
               variants={variants}
               transition={{
