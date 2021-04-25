@@ -144,7 +144,13 @@ export default function Home(props) {
                   delay: 0.75,
                 }}
               >
-                <Button>Contact me</Button>
+                <a
+                  href="mailto:michaelparkadze@icloud.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button>Contact me</Button>
+                </a>
               </motion.div>
             </div>
             <motion.div
@@ -180,7 +186,7 @@ export default function Home(props) {
             >
               About me
             </motion.h2>
-            <div>
+            <div className={styles.grid}>
               <motion.p
                 animate={aboutAnimation}
                 initial="hidden"
