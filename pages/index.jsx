@@ -3,7 +3,7 @@ import Layout from "../components/Layout";
 import Button from "../components/Button";
 import ProjectCard from "../components/ProjectCard";
 import ArticleCard from "../components/ArticleCard";
-import { getAllPosts } from "../lib/data";
+import { getAllDocs } from "../lib/docs";
 import readTime from "../lib/readTime";
 import projects from "../content/projects";
 import { motion, useAnimation } from "framer-motion";
@@ -372,7 +372,7 @@ export default function Home(props) {
 }
 
 export async function getStaticProps() {
-  const allPosts = getAllPosts();
+  const allPosts = getAllDocs();
   return {
     props: {
       posts: allPosts.map(({ data, content, slug }) => ({
