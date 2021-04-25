@@ -197,10 +197,10 @@ export default function Home(props) {
                   delay: 0.15,
                 }}
               >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque
-                tempor, malesuada adipiscing congue diam. Quis orci amet
-                porttitor blandit amet nullam sit. Elit, purus blandit non ut
-                non quam curabitur.
+                Hello! My name is Michael and I enjoy solving difficult
+                problems. My interest in web development started back in the 8th
+                grade when I decided to try building a website with HTML & CSS —
+                turns out you can learn a lot from watching youtube tutorials!
               </motion.p>
               <motion.p
                 animate={aboutAnimation}
@@ -212,10 +212,10 @@ export default function Home(props) {
                   delay: 0.3,
                 }}
               >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque
-                tempor, malesuada adipiscing congue diam. Quis orci amet
-                porttitor blandit amet nullam sit. Elit, purus blandit non ut
-                non quam curabitur.
+                Fast-forward to today, I have over 2 years of experience in
+                designing and developing products and digital experiences. My
+                main focus today is expanding my knowledge about system
+                architecture design.
               </motion.p>
             </div>
             <motion.div
