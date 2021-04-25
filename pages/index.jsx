@@ -111,7 +111,7 @@ export default function Home(props) {
                   delay: 0.45,
                 }}
               >
-                Hello I am Michael. <br /> A software engineer.
+                Hello, I am Michael. <br /> A software engineer.
               </motion.h1>
               <motion.p
                 animate={welcomeAnimation}
@@ -123,8 +123,16 @@ export default function Home(props) {
                   delay: 0.6,
                 }}
               >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit dapibus
-                porta lorem morbi hendrerit. Maecenas et, at quis purus.
+                I'm a full-stack software engineer based in{" "}
+                <a
+                  href="https://www.google.com/maps/search/hafia"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  Haifa, Israel
+                </a>{" "}
+                who specializes in building (and occasionally designing)
+                remarkable digital experiences.
               </motion.p>
               <motion.div
                 animate={welcomeAnimation}
