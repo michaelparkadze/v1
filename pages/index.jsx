@@ -6,9 +6,70 @@ import ArticleCard from "../components/ArticleCard";
 import { getAllPosts } from "../lib/data";
 import readTime from "../lib/readTime";
 import projects from "../content/projects";
+import { motion, useAnimation } from "framer-motion";
 import styles from "../styles/home.module.scss";
+import { useInView } from "react-intersection-observer";
+import { useEffect } from "react";
 
 export default function Home(props) {
+  const animation = useAnimation();
+  const [aboutRef, aboutInView] = useInView({
+    triggerOnce: true,
+    rootMargin: "0px",
+  });
+  // const [projects, inView] = useInView({
+  //   triggerOnce: true,
+  //   rootMargin: "0px",
+  // });
+  // const [articles, inView] = useInView({
+  //   triggerOnce: true,
+  //   rootMargin: "0px",
+  // });
+  // const [aboutRef, inView] = useInView({
+  //   triggerOnce: true,
+  //   rootMargin: "0px",
+  // });
+
+  // About InView
+  useEffect(() => {
+    if (aboutInView) {
+      animation.start("visible");
+      console.log("about is visible");
+    }
+  }, [animation, aboutInView]);
+
+  // About InView
+  // useEffect(() => {
+  //   if (inView) {
+  //     animation.start("visible");
+  //     console.log("about is visible");
+  //   }
+  // }, [animation, inView]);
+
+  // About InView
+  // useEffect(() => {
+  //   if (inView) {
+  //     animation.start("visible");
+  //     console.log("about is visible");
+  //   }
+  // }, [animation, inView]);
+
+  // About InView
+  // useEffect(() => {
+  //   if (inView) {
+  //     animation.start("visible");
+  //     console.log("about is visible");
+  //   }
+  // }, [animation, inView]);
+
+  const variants = {
+    visible: {
+      opacity: 1,
+      y: 0,
+    },
+    hidden: { opacity: 0, y: 72 },
+  };
+
   const { posts } = props;
   return (
     <>
@@ -20,21 +81,60 @@ export default function Home(props) {
         <div className={styles.container} id="welcome">
           <section className={styles.welcome}>
             <div className={styles.left}>
-              <h1>
+              <motion.h1
+                animate="visible"
+                initial="hidden"
+                variants={variants}
+                transition={{
+                  duration: 0.8,
+                  ease: [0.6, 0.05, -0.01, 0.9],
+                  delay: 0.45,
+                }}
+              >
                 Hello I am Michael. <br /> A software engineer.
-              </h1>
-              <p>
+              </motion.h1>
+              <motion.p
+                animate="visible"
+                initial="hidden"
+                variants={variants}
+                transition={{
+                  duration: 0.8,
+                  ease: [0.6, 0.05, -0.01, 0.9],
+                  delay: 0.6,
+                }}
+              >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit dapibus
                 porta lorem morbi hendrerit. Maecenas et, at quis purus.
-              </p>
-              <Button>Contact me</Button>
+              </motion.p>
+              <motion.div
+                animate="visible"
+                initial="hidden"
+                variants={variants}
+                transition={{
+                  duration: 0.8,
+                  ease: [0.6, 0.05, -0.01, 0.9],
+                  delay: 0.75,
+                }}
+              >
+                <Button>Contact me</Button>
+              </motion.div>
             </div>
-            <div className={styles.illustration}>
+            <motion.div
+              className={styles.illustration}
+              animate="visible"
+              initial="hidden"
+              variants={variants}
+              transition={{
+                duration: 0.8,
+                ease: [0.6, 0.05, -0.01, 0.9],
+                delay: 0.9,
+              }}
+            >
               <div className={styles.background}></div>
               <div className={styles.person}></div>
               <div className={styles.note1}></div>
               <div className={styles.note2}></div>
-            </div>
+            </motion.div>
           </section>
           <hr />
           <section className={styles.about}>
