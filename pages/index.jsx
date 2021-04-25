@@ -262,6 +262,7 @@ export default function Home(props) {
                     key={index}
                     type={item.type}
                     name={item.name}
+                    tech={item.tech}
                     description={item.description}
                     gradient1={item.gradient1}
                     gradient2={item.gradient2}
