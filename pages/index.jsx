@@ -233,7 +233,9 @@ export default function Home(props) {
                 delay: 0.35,
               }}
             >
-              <Button>More about me</Button>
+              <a href="#contact">
+                <Button>More about me</Button>
+              </a>
             </motion.div>
           </section>
           <hr />
