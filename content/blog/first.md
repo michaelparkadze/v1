@@ -2,7 +2,7 @@
 title: A brief guide to Super keyword in JavaScript
 description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et tortor velit morbi integer sed orci, suspendisse quis. Turpis quis id eget feugiat.
 topic: Design
-date: 2021-02-14T19:05:27.220Z
+date: 2021-02-11T19:05:27.220Z
 ---
 
 Open Source Software (OSS) has been getting a lot of traction in recent years. Right now, there are approximately 200,000 open source projects worth billions of dollar, being worked on across the globe.
