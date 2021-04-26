@@ -97,6 +97,10 @@ export default function Home(props) {
       <Head>
         <title>Michael Parkadze</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta
+          name="description"
+          content="Michael Parkadze is a full-stack software enginner based in Haifa, Israel who specializes in building (and occasionally designing) remarkable digital experiences."
+        ></meta>
       </Head>
       <Layout>
         <div className={styles.container} id="welcome">
