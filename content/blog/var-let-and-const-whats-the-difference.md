@@ -311,4 +311,4 @@ Just like its fellow `let`, `const` declarations are hoisted to the top but are 
 <br>
 
 Got any questions or just want to say hi? \
-Feel free to send me an email or a connection request on linkedIn
+Feel free to send me an [email](mailto:michaelparkadze@icloud.com) or a connection request on [LinkedIn](https://www.linkedin.com/in/michaelparkadze/)
