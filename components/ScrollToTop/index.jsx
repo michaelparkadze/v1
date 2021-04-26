@@ -22,10 +22,20 @@ export default function ScrollToTop() {
 
   useEffect(() => {
     window.addEventListener("scroll", toggleVisibility);
+
+    return () => {
+      window.removeEventListener("scroll", toggleVisibility);
+    };
   }, []);
   return (
     <div className={styles.scrollToTop}>
-      <button onClick={scrollToTop} style={{ opacity: isVisible ? "1" : "0" }}>
+      <button
+        onClick={scrollToTop}
+        style={{
+          opacity: isVisible ? "1" : "0",
+          pointerEvents: isVisible ? "auto" : "none",
+        }}
+      >
         <Image src="/assets/icons/up-arrow.svg" height={24} width={24} />
       </button>
     </div>
