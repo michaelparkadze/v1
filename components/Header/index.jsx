@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import useWindowDimensions from "../../hooks/useWindowDimensions";
 import Image from "next/image";
@@ -7,8 +7,40 @@ import styles from "./styles.module.scss";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const [isHome, setIsHome] = useState(false);
+  const isBrowser = typeof window !== "undefined";
   const { width } = useWindowDimensions();
   const isMobile = width <= 768;
+
+  const links = [
+    {
+      name: "Home",
+      link: isHome ? "#welcome" : "/",
+    },
+    {
+      name: "About",
+      link: isHome ? "#about" : "/#about",
+    },
+    {
+      name: "Projects",
+      link: isHome ? "#projects" : "/#projects",
+    },
+    {
+      name: "Articles",
+      link: isHome ? "#articles" : "/#articles",
+    },
+    {
+      name: "Contact",
+      link: isHome ? "#contact" : "/#contact",
+    },
+  ];
+
+  useEffect(() => {
+    if (isBrowser && window.location.pathname === "/") {
+      setIsHome(true);
+    } else setIsHome(false);
+    console.log(window.location.pathname);
+  }, [isBrowser && window.location.pathname]);
 
   const variants = {
     visible: {
@@ -77,12 +109,15 @@ export default function Header() {
         ) : (
           <nav className={styles.nav}>
             <motion.ul initial="hidden" animate="visible" variants={list}>
-              <motion.a href="#welcome" variants={item}>
-                <li>Home</li>
-              </motion.a>
-              <motion.a href="#about" variants={item}>
-                <li>About</li>
-              </motion.a>
+              {links.map((link, index) => {
+                return (
+                  <motion.a href={link.link} variants={item} key={index}>
+                    <li>{link.name}</li>
+                  </motion.a>
+                );
+              })}
+              {/*              
+          
               <motion.a href="#projects" variants={item}>
                 <li>Projects</li>
               </motion.a>
@@ -91,7 +126,7 @@ export default function Header() {
               </motion.a>
               <motion.a href="#contact" variants={item}>
                 <li>Contact</li>
-              </motion.a>
+              </motion.a> */}
             </motion.ul>
           </nav>
         )}
