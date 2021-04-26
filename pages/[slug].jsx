@@ -1,4 +1,5 @@
 import React from "react";
+import Head from "next/head";
 import Layout from "../components/Layout";
 import Article from "../components/Article";
 import { getArticleSlugs, getArticleBySlug } from "../lib/data";
@@ -8,6 +9,10 @@ export default function ArticlePage(props) {
 
   return (
     <Layout>
+      <Head>
+        <title>{title}</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <Article
         title={title}
         content={content}
