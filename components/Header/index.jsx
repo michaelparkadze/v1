@@ -79,21 +79,9 @@ export default function Header() {
   return (
     <>
       <header className={styles.container}>
-        <motion.div
-          className={styles.logo}
-          animate="visible"
-          initial="hidden"
-          variants={variants}
-          transition={{
-            duration: 1.2,
-            ease: [0.3, 0.05, -0.01, 0.3],
-          }}
-        >
-          <a href="/">MP</a>
-        </motion.div>
-        {isMobile ? (
+        <div className={styles.content}>
           <motion.div
-            className={styles.toggle}
+            className={styles.logo}
             animate="visible"
             initial="hidden"
             variants={variants}
@@ -102,21 +90,34 @@ export default function Header() {
               ease: [0.3, 0.05, -0.01, 0.3],
             }}
           >
-            <button onClick={toggleMenu}>
-              <Image src="/assets/icons/menu.svg" height={28} width={28} />
-            </button>
+            <a href="/">MP</a>
           </motion.div>
-        ) : (
-          <nav className={styles.nav}>
-            <motion.ul initial="hidden" animate="visible" variants={list}>
-              {links.map((link, index) => {
-                return (
-                  <motion.a href={link.link} variants={item} key={index}>
-                    <li>{link.name}</li>
-                  </motion.a>
-                );
-              })}
-              {/*              
+          {isMobile ? (
+            <motion.div
+              className={styles.toggle}
+              animate="visible"
+              initial="hidden"
+              variants={variants}
+              transition={{
+                duration: 1.2,
+                ease: [0.3, 0.05, -0.01, 0.3],
+              }}
+            >
+              <button onClick={toggleMenu}>
+                <Image src="/assets/icons/menu.svg" height={28} width={28} />
+              </button>
+            </motion.div>
+          ) : (
+            <nav className={styles.nav}>
+              <motion.ul initial="hidden" animate="visible" variants={list}>
+                {links.map((link, index) => {
+                  return (
+                    <motion.a href={link.link} variants={item} key={index}>
+                      <li>{link.name}</li>
+                    </motion.a>
+                  );
+                })}
+                {/*              
           
               <motion.a href="#projects" variants={item}>
                 <li>Projects</li>
@@ -127,9 +128,10 @@ export default function Header() {
               <motion.a href="#contact" variants={item}>
                 <li>Contact</li>
               </motion.a> */}
-            </motion.ul>
-          </nav>
-        )}
+              </motion.ul>
+            </nav>
+          )}
+        </div>
       </header>
       <Menu open={open} toggleMenu={toggleMenu} />
     </>

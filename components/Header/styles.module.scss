@@ -1,58 +1,61 @@
 .container {
   height: 72px;
-  display: flex;
   position: fixed;
   left: 0;
   right: 0;
-  border-bottom: 1px solid #ccc;
   background-color: #fff;
   z-index: 5;
-  .logo {
-    flex-grow: 1;
+  .content {
     display: flex;
-    align-items: center;
-    padding-left: 24px;
-    > a {
-      font-family: "Cormorant Garamond", serif;
-      font-weight: 600;
-      font-size: 2rem;
-    }
-  }
-  .toggle {
-    width: 72px;
-    display: flex;
-    > button {
-      width: 100%;
-      background: transparent;
-      border: none;
-      cursor: pointer;
-    }
-  }
-  .nav {
-    > ul {
-      margin: 0;
-      padding: 0;
-      height: 100%;
+    height: 100%;
+    border-bottom: 1px solid #ccc;
+    .logo {
+      flex-grow: 1;
       display: flex;
       align-items: center;
-      list-style: none;
+      padding-left: 24px;
       > a {
-        position: relative;
-        margin-left: 24px;
-        > li {
-          cursor: pointer;
-        }
-        &:after {
-          border-top: 2px solid #121212;
-          content: "";
-          position: absolute;
-          right: 100%;
-          bottom: -2px;
-          left: 0;
-          transition: right 0.7s cubic-bezier(0, 0.4, 0, 1.1);
-        }
-        &:hover:after {
-          right: 0;
+        font-family: "Cormorant Garamond", serif;
+        font-weight: 600;
+        font-size: 2rem;
+      }
+    }
+    .toggle {
+      width: 72px;
+      display: flex;
+      > button {
+        width: 100%;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+      }
+    }
+    .nav {
+      > ul {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        list-style: none;
+        > a {
+          position: relative;
+          margin-left: 24px;
+          > li {
+            cursor: pointer;
+          }
+          &:after {
+            border-top: 2px solid #121212;
+            content: "";
+            position: absolute;
+            right: 100%;
+            bottom: -2px;
+            left: 0;
+            transition: right 0.7s cubic-bezier(0, 0.4, 0, 1.1);
+          }
+          &:hover:after {
+            right: 0;
+          }
         }
       }
     }
@@ -61,10 +64,12 @@
 
 @media screen and (min-width: 1200px) {
   .container {
-    margin: 0 auto;
-    max-width: 1024px;
-    .logo {
-      padding: 0;
+    .content {
+      margin: 0 auto;
+      max-width: 1024px;
+      .logo {
+        padding: 0;
+      }
     }
   }
 }
