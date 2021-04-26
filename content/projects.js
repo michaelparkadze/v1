@@ -35,7 +35,7 @@ const projects = [
     iconBg: "#fff",
     gradient1: "#FF02B0",
     gradient2: "#13F2FF",
-    liveLink: "",
+    liveLink: "https://www.michaelparkadze.xyz/",
     codeLink: "https://github.com/michaelparkadze/v1",
     tech: ["Next.js", "Framer Motion", "Antd", "Sass"],
   },
