@@ -2,7 +2,7 @@
 title: Var, Let, and Const – What's the Difference?
 description: In this article, we'll discuss var, let and const  with respect to their scope, use, and hoisting. As you read, take note of the differences between them that I'll point out.
 topic: JavaScript
-date: 2021-04-26T09:37:50Z
+date: 2021-04-26T16:31:23Z
 ---
 
 A lot of new features came out with ECMAScript2015 (ES6). And now, since it's 2021, it's assumed that ES6 is pretty much awidely adopted at this point and a lot of JavaScript developers have started using these features.
