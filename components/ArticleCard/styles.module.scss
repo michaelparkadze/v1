@@ -2,11 +2,13 @@
   cursor: pointer;
   padding-bottom: 40px;
   border-bottom: 1px solid #ccc;
+
   .title {
     font-size: 1.375rem;
     font-weight: 600;
     line-height: 1.35;
     margin-bottom: 12px;
+    transition: transform 0.2s;
   }
   .description {
     margin-bottom: 24px;
@@ -39,6 +41,11 @@
       > span {
         margin-left: 6px;
       }
+    }
+  }
+  &:hover {
+    .title {
+      transform: translateX(12px);
     }
   }
 }
