@@ -3,7 +3,7 @@ import Layout from "../components/Layout";
 import Button from "../components/Button";
 import ProjectCard from "../components/ProjectCard";
 import ArticleCard from "../components/ArticleCard";
-import { getAllDocs } from "../lib/docs";
+import { getAllArticles } from "../lib/data";
 import readTime from "../lib/readTime";
 import projects from "../content/projects";
 import { motion, useAnimation } from "framer-motion";
@@ -44,6 +44,7 @@ export default function Home(props) {
 
   // Welcome InView
   useEffect(() => {
+    console.log(props);
     if (welcomeInView) {
       welcomeAnimation.start("visible");
       console.log("welcome is visible");
@@ -90,7 +91,7 @@ export default function Home(props) {
     hidden: { opacity: 0, y: 72 },
   };
 
-  const { posts } = props;
+  const { articles } = props;
   return (
     <>
       <Head>
@@ -300,11 +301,11 @@ export default function Home(props) {
                 delay: 0.15,
               }}
             >
-              {posts.map((item, index) => {
+              {articles.map((item, index) => {
                 return (
                   <ArticleCard
                     key={index}
-                    last={index === posts.length - 1}
+                    last={index === articles.length - 1}
                     title={item.title}
                     description={item.description}
                     topic={item.topic}
@@ -372,12 +373,11 @@ export default function Home(props) {
 }
 
 export async function getStaticProps() {
-  const allPosts = getAllDocs();
+  const allArticles = getAllArticles();
   return {
     props: {
-      posts: allPosts.map(({ data, content, slug }) => ({
-        ...data,
-        date: data.date.toISOString(),
+      articles: allArticles.map(({ frontmatter, content, slug }) => ({
+        ...frontmatter,
         content,
         slug,
       })),

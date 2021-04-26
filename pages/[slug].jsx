@@ -1,13 +1,14 @@
 import React, { useEffect } from "react";
 import Link from "next/link";
-import { getAllDocs, getDocBySlug } from "../lib/docs";
+import { getArticleSlugs, getArticleBySlug } from "../lib/data";
 import { parseISO, format } from "date-fns";
 import styles from "../styles/article.module.scss";
 import ReactMarkdown from "react-markdown/with-html";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import style from "react-syntax-highlighter/dist/cjs/styles/prism/dracula";
 
 export default function BlogPost(props) {
-  const { title, content, date } = props;
+  const { title, content, date, previousArticle, nextArticle } = props;
 
   useEffect(() => {
     console.log(props);
@@ -33,67 +34,67 @@ export default function BlogPost(props) {
           />
         </section>
       </article>
+      <nav>
+        {previousArticle ? (
+          <Link href={"/[slug]"} as={`/${previousArticle.slug}`}>
+            <a className="text-lg font-bold">
+              ← {previousArticle.frontmatter.title}
+            </a>
+          </Link>
+        ) : (
+          <div />
+        )}
+        {nextArticle ? (
+          <Link href={"/[slug]"} as={`/${nextArticle.slug}`}>
+            <a className="text-lg font-bold">
+              {nextArticle.frontmatter.title} →
+            </a>
+          </Link>
+        ) : (
+          <div />
+        )}
+      </nav>
     </div>
   );
 }
 
 const CodeBlock = ({ language, value }) => {
-  return <SyntaxHighlighter language={language}>{value}</SyntaxHighlighter>;
+  return (
+    <SyntaxHighlighter language={language} style={style}>
+      {value}
+    </SyntaxHighlighter>
+  );
 };
 
 export async function getStaticProps({ params }) {
-  const doc = getDocBySlug(params.slug);
-  const { data, content } = doc;
-  // const test = await renderToString(content);
-  // console.log(test);
+  const doc = getArticleBySlug(params.slug);
+  console.log(doc);
+  const { frontmatter, content, slug } = doc;
+
+  if (!doc.previousArticle) {
+    doc.previousArticle = null;
+  }
+
+  if (!doc.nextArticle) {
+    doc.nextArticle = null;
+  }
 
   return {
     props: {
-      ...data,
-      date: data.date.toISOString(),
-      content: content,
+      ...frontmatter,
+      slug,
+      content,
+      previousArticle: doc.previousArticle,
+      nextArticleL: doc.nextArticle,
     },
   };
 }
 
 export async function getStaticPaths() {
-  const docs = getAllDocs();
+  const paths = getArticleSlugs();
 
   return {
-    paths: docs.map((doc) => {
-      return {
-        params: {
-          slug: doc.slug,
-        },
-      };
-    }),
+    paths,
     fallback: false,
   };
 }
-
-// export async function getStaticProps(context) {
-//   const { params } = context;
-//   const allPosts = getAllPosts();
-//   const { data, content } = allPosts.find((item) => item.slug === params.slug);
-//   console.log(allPosts);
-//   const mdxSource = await markdownToHtml(content);
-
-//   return {
-//     props: {
-//       ...data,
-//       date: data.date.toISOString(),
-//       content: mdxSource,
-//     },
-//   };
-// }
-
-// export async function getStaticPaths() {
-//   return {
-//     paths: getAllPosts().map((post) => ({
-//       params: {
-//         slug: post.slug,
-//       },
-//     })),
-//     fallback: false,
-//   };
-// }
