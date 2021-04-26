@@ -302,18 +302,20 @@ export default function Home(props) {
               }}
             >
               {articles.map((item, index) => {
-                return (
-                  <ArticleCard
-                    key={index}
-                    last={index === articles.length - 1}
-                    title={item.title}
-                    description={item.description}
-                    topic={item.topic}
-                    date={item.date}
-                    slug={item.slug}
-                    readTime={readTime(item.content)}
-                  />
-                );
+                if (index < 4) {
+                  return (
+                    <ArticleCard
+                      key={index}
+                      last={index === articles.length - 1}
+                      title={item.title}
+                      description={item.description}
+                      topic={item.topic}
+                      date={item.date}
+                      slug={item.slug}
+                      readTime={readTime(item.content)}
+                    />
+                  );
+                }
               })}
             </motion.ul>
           </section>
