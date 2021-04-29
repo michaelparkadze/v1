@@ -11,6 +11,7 @@ export default function Footer() {
           target="_blank"
           rel="noreferrer noopener"
         >
+          <span>Stack Overflow</span>
           <svg
             width="24"
             height="24"
@@ -28,6 +29,7 @@ export default function Footer() {
           target="_blank"
           rel="noreferrer noopener"
         >
+          <span>LinkedIn</span>
           <svg
             width="24"
             height="24"
@@ -44,6 +46,7 @@ export default function Footer() {
           target="_blank"
           rel="noreferrer noopener"
         >
+          <span>Github</span>
           <svg
             width="24"
             height="24"

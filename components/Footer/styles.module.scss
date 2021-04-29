@@ -15,6 +15,21 @@
   .links {
     margin-bottom: 24px;
     > a {
+      > span {
+        clip: rect(1px, 1px, 1px, 1px);
+        height: 1px;
+        overflow: hidden;
+        position: absolute;
+        white-space: nowrap;
+        width: 1px;
+        &:focus {
+          clip: auto;
+          height: auto;
+          overflow: auto;
+          position: absolute;
+          width: auto;
+        }
+      }
       > svg {
         fill: #535353;
         margin: 0 8px !important;
