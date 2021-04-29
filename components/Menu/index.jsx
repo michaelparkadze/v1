@@ -35,7 +35,7 @@ export default function Menu(props) {
     if (isBrowser && window.location.pathname === "/") {
       setIsHome(true);
     } else setIsHome(false);
-    console.log(window.location.pathname);
+    // console.log(window.location.pathname);
   }, [isBrowser && window.location.pathname]);
   return (
     <>

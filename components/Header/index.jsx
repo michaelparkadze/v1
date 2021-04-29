@@ -39,7 +39,7 @@ export default function Header() {
     if (isBrowser && window.location.pathname === "/") {
       setIsHome(true);
     } else setIsHome(false);
-    console.log(window.location.pathname);
+    // console.log(window.location.pathname);
   }, [isBrowser && window.location.pathname]);
 
   const variants = {
@@ -122,17 +122,6 @@ export default function Header() {
                     </motion.a>
                   );
                 })}
-                {/*              
-          
-              <motion.a href="#projects" variants={item}>
-                <li>Projects</li>
-              </motion.a>
-              <motion.a href="#articles" variants={item}>
-                <li>Articles</li>
-              </motion.a>
-              <motion.a href="#contact" variants={item}>
-                <li>Contact</li>
-              </motion.a> */}
               </motion.ul>
             </nav>
           )}

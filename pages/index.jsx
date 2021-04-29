@@ -44,10 +44,9 @@ export default function Home(props) {
 
   // Welcome InView
   useEffect(() => {
-    console.log(props);
     if (welcomeInView) {
       welcomeAnimation.start("visible");
-      console.log("welcome is visible");
+      // console.log("welcome is visible");
     }
   }, [welcomeAnimation, welcomeInView]);
 
@@ -55,7 +54,7 @@ export default function Home(props) {
   useEffect(() => {
     if (aboutInView) {
       aboutAnimation.start("visible");
-      console.log("about is visible");
+      // console.log("about is visible");
     }
   }, [aboutAnimation, aboutInView]);
 
@@ -63,7 +62,7 @@ export default function Home(props) {
   useEffect(() => {
     if (projectsInView) {
       projectsAnimation.start("visible");
-      console.log("projects is visible");
+      // console.log("projects is visible");
     }
   }, [projectsAnimation, projectsInView]);
 
@@ -71,7 +70,7 @@ export default function Home(props) {
   useEffect(() => {
     if (articlesInView) {
       articlesAnimation.start("visible");
-      console.log("articles is visible");
+      // console.log("articles is visible");
     }
   }, [articlesAnimation, articlesInView]);
 
@@ -79,7 +78,7 @@ export default function Home(props) {
   useEffect(() => {
     if (contactInView) {
       contactAnimation.start("visible");
-      console.log("contact is visible");
+      // console.log("contact is visible");
     }
   }, [contactAnimation, contactInView]);
 
