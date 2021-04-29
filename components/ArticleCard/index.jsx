@@ -25,7 +25,12 @@ export default function ArticleCard(props) {
           </div>
 
           <div className={styles.readtime}>
-            <Image src="/assets/icons/book.svg" height={18} width={18} />
+            <Image
+              src="/assets/icons/book.svg"
+              height={18}
+              width={18}
+              alt="book icon"
+            />
             <span>{readTime} min read</span>
           </div>
         </div>

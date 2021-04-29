@@ -45,6 +45,7 @@ export default function Menu(props) {
       >
         <Image
           src="/assets/icons/close.svg"
+          alt="close menu icon"
           height={36}
           width={36}
           className={styles.close}

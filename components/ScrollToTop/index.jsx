@@ -37,7 +37,12 @@ export default function ScrollToTop() {
           pointerEvents: isVisible ? "auto" : "none",
         }}
       >
-        <Image src="/assets/icons/up-arrow.svg" height={24} width={24} />
+        <Image
+          src="/assets/icons/up-arrow.svg"
+          height={24}
+          width={24}
+          alt="scroll back up arrow icon"
+        />
       </button>
     </div>
   );
