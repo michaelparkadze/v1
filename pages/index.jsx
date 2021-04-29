@@ -177,7 +177,7 @@ export default function Home(props) {
           </section>
           <hr />
           <section className={styles.about}>
-            <a className={styles.anchor} id="about"></a>
+            <span className={styles.anchor} id="about"></span>
             <motion.h2
               ref={aboutRef}
               animate={aboutAnimation}
@@ -240,7 +240,7 @@ export default function Home(props) {
           </section>
           <hr />
           <section className={styles.projects} ref={projectsRef}>
-            <a className={styles.anchor} id="projects"></a>
+            <span className={styles.anchor} id="projects"></span>
             <motion.h2
               animate={projectsAnimation}
               initial="hidden"
@@ -265,25 +265,26 @@ export default function Home(props) {
             >
               {projects.map((item, index) => {
                 return (
-                  <ProjectCard
-                    key={index}
-                    type={item.type}
-                    name={item.name}
-                    tech={item.tech}
-                    description={item.description}
-                    gradient1={item.gradient1}
-                    gradient2={item.gradient2}
-                    iconBg={item.iconBg}
-                    liveLink={item.liveLink}
-                    codeLink={item.codeLink}
-                  />
+                  <li key={index}>
+                    <ProjectCard
+                      type={item.type}
+                      name={item.name}
+                      tech={item.tech}
+                      description={item.description}
+                      gradient1={item.gradient1}
+                      gradient2={item.gradient2}
+                      iconBg={item.iconBg}
+                      liveLink={item.liveLink}
+                      codeLink={item.codeLink}
+                    />
+                  </li>
                 );
               })}
             </motion.ul>
           </section>
           <hr />
           <section className={styles.articles}>
-            <a className={styles.anchor} id="articles"></a>
+            <span className={styles.anchor} id="articles"></span>
             <motion.div
               ref={articlesRef}
               animate={articlesAnimation}
@@ -310,16 +311,17 @@ export default function Home(props) {
               {articles.map((item, index) => {
                 if (index < 4) {
                   return (
-                    <ArticleCard
-                      key={index}
-                      last={index === articles.length - 1}
-                      title={item.title}
-                      description={item.description}
-                      topic={item.topic}
-                      date={item.date}
-                      slug={item.slug}
-                      readTime={readTime(item.content)}
-                    />
+                    <li key={index}>
+                      <ArticleCard
+                        last={index === articles.length - 1}
+                        title={item.title}
+                        description={item.description}
+                        topic={item.topic}
+                        date={item.date}
+                        slug={item.slug}
+                        readTime={readTime(item.content)}
+                      />
+                    </li>
                   );
                 }
               })}
@@ -327,7 +329,7 @@ export default function Home(props) {
           </section>
           <hr />
           <section className={styles.contact}>
-            <a className={styles.anchor} id="contact"></a>
+            <span className={styles.anchor} id="contact"></span>
             <motion.h2
               ref={contactRef}
               animate={contactAnimation}
