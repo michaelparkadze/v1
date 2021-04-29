@@ -103,7 +103,7 @@ export default function Header() {
                 ease: [0.3, 0.05, -0.01, 0.3],
               }}
             >
-              <button onClick={toggleMenu}>
+              <button onClick={toggleMenu} aria-label="toggle menu state">
                 <Image src="/assets/icons/menu.svg" height={28} width={28} />
               </button>
             </motion.div>
